@@ -1,24 +1,24 @@
 %define upstream_name    Net-SMTP-TLS-ButMaintained
 %define upstream_version 0.18
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	2
 
-Summary:    An SMTP client supporting TLS and AUTH
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	An SMTP client supporting TLS and AUTH
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(Digest::HMAC_MD5)
-BuildRequires: perl(IO::Socket::INET)
-BuildRequires: perl(IO::Socket::SSL)
-BuildRequires: perl(MIME::Base64)
-BuildRequires: perl(Net::Cmd)
-BuildRequires: perl(Net::SSLeay)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(Digest::HMAC_MD5)
+BuildRequires:	perl(IO::Socket::INET)
+BuildRequires:	perl(IO::Socket::SSL)
+BuildRequires:	perl(MIME::Base64)
+BuildRequires:	perl(Net::Cmd)
+BuildRequires:	perl(Net::SSLeay)
+BuildArch:	noarch
 
 %description
 *Net::SMTP::TLS::ButMaintained* is forked from the Net::SMTP::TLS manpage.
@@ -38,24 +38,22 @@ perldoc for the Net::SMTP manpage if you are unclear.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc README Changes LICENSE META.yml META.json
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
 
+%changelog
+* Sat Sep 10 2011 Luis Daniel Lucio Quiroz <dlucio@mandriva.org> 0.180.0-1mdv2011.0
++ Revision: 699291
+- import perl-Net-SMTP-TLS-ButMaintained
 
