@@ -1,2 +1,4 @@
+removed_sources:
+  Net-SMTP-TLS-ButMaintained-0.18.tar.gz: a70f90414c4132fbb68e6c0057d458389c9a9491
 sources:
-  "Net-SMTP-TLS-ButMaintained-0.18.tar.gz": a70f90414c4132fbb68e6c0057d458389c9a9491
+  Net-SMTP-TLS-ButMaintained-0.24.tar.gz: db946b5d78ee54267f44e25b32c6f2edb876ce31

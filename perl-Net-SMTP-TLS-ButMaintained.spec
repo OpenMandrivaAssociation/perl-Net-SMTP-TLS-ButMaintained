@@ -1,15 +1,15 @@
 %define upstream_name    Net-SMTP-TLS-ButMaintained
-%define upstream_version 0.18
+%define upstream_version 0.24
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	2
+Version:	%perl_convert_version 0.24
+Release:	1
 
 Summary:	An SMTP client supporting TLS and AUTH
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Net/Net-SMTP-TLS-ButMaintained-0.24.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Digest::HMAC_MD5)
@@ -56,4 +56,5 @@ perl Makefile.PL INSTALLDIRS=vendor
 * Sat Sep 10 2011 Luis Daniel Lucio Quiroz <dlucio@mandriva.org> 0.180.0-1mdv2011.0
 + Revision: 699291
 - import perl-Net-SMTP-TLS-ButMaintained
+
 
