@@ -2,14 +2,14 @@
 %define upstream_version 0.24
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version 0.24
-Release:	3
+Version:	%{upstream_version}
+Release:	4
 
 Summary:	An SMTP client supporting TLS and AUTH
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Net/Net-SMTP-TLS-ButMaintained-0.24.tar.gz
+Url:		https://github.com/fayland/Net-SMTP-TLS
+Source0:	https://cpan.metacpan.org/authors/id/F/FA/FAYLAND/Net-SMTP-TLS-ButMaintained-0.24.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
