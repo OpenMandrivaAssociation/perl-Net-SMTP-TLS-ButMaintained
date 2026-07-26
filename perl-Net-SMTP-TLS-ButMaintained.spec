@@ -1,9 +1,7 @@
 %define upstream_name    Net-SMTP-TLS-ButMaintained
-%define upstream_version 0.24
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	4
+Version:	0.24
+Release:	5
 
 Summary:	An SMTP client supporting TLS and AUTH
 License:	GPL+ or Artistic
@@ -36,7 +34,7 @@ above example. Though self explanatory for the most part, please see the
 perldoc for the Net::SMTP manpage if you are unclear.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
